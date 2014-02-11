@@ -1,0 +1,15 @@
+{
+    "name" : "NodeAngularSeed",
+    "description" : "Base project for springboarding other Node + Angular Applications",
+    "version" : "0.1.0",
+    "author" : "Stephen Schroeder <tekknoschtev@gmail.com>",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/tekknoschtev/nodeAngularSeed.git"
+    },
+    "dependencies" : {
+        "express" : "latest",
+        "ejs" : "latest",
+        "mongoose" : "latest"
+    }
+}
