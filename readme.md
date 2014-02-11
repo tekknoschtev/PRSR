@@ -1,3 +1,3 @@
-# Node Angular Seed
+# PRSR
 
-Designed to be a light-weight starter for Node + Angular applications
+Light weight test case management tool
