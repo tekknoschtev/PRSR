@@ -1,0 +1,14 @@
+<div class="subNavigation no-print" style="height: 100%;">
+  <ul class="nav nav-stacked">
+    <li><a href="#/testplans/plan/"><i class="fa fa-plus-square-o fa-2x"></i><div class="arrow-left-light"></div></a></li>
+  </ul>
+</div>
+<div class="subNavbetween"></div>
+
+<div class="col-lg-11">
+  <h1>Test Plan - List All</h1>
+  
+  <div ng-repeat="testPlan in testPlans track by $index">
+    <a href="#/testplans/plan/{{ testPlan.details.extrnId }}">{{ testPlan.details.extrnId }}</a>
+  </div>
+</div>

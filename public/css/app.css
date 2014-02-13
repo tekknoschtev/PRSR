@@ -1,4 +1,125 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ecf0f1;
+    color: #777;
+    font-family: 'Droid Sans', sans-serif;
+}
+
+.navigation {
+    width: 85px;
+    float: left;
+    padding-top: 5px;
+    background-color: #22313F;
+    height: 100%;
+    font-size: 105%;
+}
+
+.subNavigation {
+    width: 60px;
+    float: left;
+    margin-left: -20px;
+    background-color: #2980b9;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.navbetween {
+    width: 5px;
+    background-color: #2980b9;
+    height: 100%;
+    float: left;
+}
+
+.subNavbetween {
+    width: 5px;
+    background-color: #6BB9F0;
+    height: 100%;
+    float: left;
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation a,.subNavigation a {
+    color: #fff;
+}
+
+.navigation .nav>li>a:hover,
+.navigation .nav>li>a:focus {
+    background-color: #2980b9;
+}
+
+.subNavigation .nav>li>a:hover,
+.subNavigation .nav>li>a:focus {
+    background-color: #6BB9F0;
+}
+
+.title {
+    font-size: 150%;
+}
+
+.header {
+    background-color: #6BB9F0;
+    color: #fefefe;
+    /*margin-left: -15px;*/
+    padding: 5px;
+    font-size: 150%;
+}
+
+.category {
+    background-color: #6BB9F0;
+    color: #fefefe;
+    /*margin-left: -15px;*/
+    padding: 5px;
+    font-size: 120%;
+}
+
+.arrow-left-dark {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-right: 5px solid #2980b9; 
+	float: right;
+    margin-right: -15px;
+    margin-top: 15px;
+}
+
+.arrow-left-light {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent; 
+	border-right: 5px solid #6BB9F0; 
+	float: right;
+    margin-right: -15px;
+    margin-top: 10px;
+}
+
+.testPlanInfo {
+    /*margin-top: 15px;*/
+    padding-top: 5px;
+    background-color: #fefefe;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.testPlanInfo textarea {
+    border: 1px solid #ddd;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+div[contenteditable] {
+    border: 1px solid darkgray;
+    height: 100%;
+    overflow: none;
 }

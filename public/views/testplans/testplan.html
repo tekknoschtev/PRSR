@@ -1,0 +1,84 @@
+<div class="subNavigation no-print" style="height: 100%;">
+  <ul class="nav nav-stacked">
+    <li><a href="" ng-click="setMode('view')"><i class="fa fa-search fa-2x"></i><div ng-show="mode=='view'" class="arrow-left-light"></div></a></li>
+    <li><a href="" ng-click="setMode('edit')"><i class="fa fa-pencil-square-o fa-2x"></i><div ng-show="mode=='edit'" class="arrow-left-light"></div></a></li>
+    <li ng-show="mode=='edit'" ><a href="" ng-click="savePlan()"><i class="fa fa-save fa-2x"></i></a></li>
+    <li><a href="" ng-click="setMode('run')"><i class="fa fa-check-square-o fa-2x"></i><div ng-show="mode=='run'" class="arrow-left-light"></div></a></li>
+  </ul>
+</div>
+<div class="subNavbetween"></div>
+  
+  
+<div class="col-lg-11" ng-show="mode == 'view'">
+  <div class="row header">{{ testPlan.details.extrnId }} - View</div>
+    
+  <div ng-repeat="category in testPlan.details.category">
+    <div class="row">
+      <div class="category col-md-12">{{ category.name }}</div> 
+    </div>
+    <div class="row testPlanInfo" ng-repeat="testStep in category.testSteps">
+      <div class="col-sm-4">
+        {{ testStep.setup }}
+      </div>
+      <div class="col-sm-4">
+        {{ testStep.action }}
+      </div>
+      <div class="col-sm-4">
+        {{ testStep.outcome }}
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="col-lg-11" ng-show="mode == 'edit'">
+  <div class="row header"
+        contenteditable="true"
+        ng-model="testPlan.details.extrnId"
+        strip-br="true"
+        select-non-editable="true"></div>
+    
+  <div ng-repeat="category in testPlan.details.category">
+    <div class="row">
+      <div class="category col-md-12">{{ category.name }}</div> 
+    </div>
+    <div class="row testPlanInfo" ng-repeat="testStep in category.testSteps">
+      <div class="col-sm-4"
+        contenteditable="true"
+        ng-model="testStep.setup"
+        strip-br="true"
+        select-non-editable="false"></div>
+      <div class="col-sm-4"
+        contenteditable="true"
+        ng-model="testStep.action"
+        strip-br="true"
+        select-non-editable="false"></div>
+      <div class="col-sm-4"
+        contenteditable="true"
+        ng-model="testStep.outcome"
+        strip-br="true"
+        select-non-editable="false"></div>
+    </div>
+      
+  </div>
+</div>
+  
+<div class="col-lg-11" ng-show="mode == 'run'">
+  <div class="row header">{{ testPlan.details.extrnId }} - Run</div>
+    
+  <div ng-repeat="category in testPlan.details.category">
+    <div class="row">
+      <div class="category col-md-12">{{ category.name }}</div> 
+    </div>
+    <div class="row testPlanInfo" ng-repeat="testStep in category.testSteps">
+      <div class="col-sm-4">
+        {{ testStep.setup }}
+      </div>
+      <div class="col-sm-4">
+        {{ testStep.action }}
+      </div>
+      <div class="col-sm-4">
+        {{ testStep.outcome }}
+      </div>
+    </div>
+  </div>
+</div>
