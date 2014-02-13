@@ -1,9 +1,9 @@
 <div class="subNavigation no-print" style="height: 100%;">
   <ul class="nav nav-stacked">
-    <li><a href="" ng-click="setMode('view')"><i class="fa fa-search fa-2x"></i><div ng-show="mode=='view'" class="arrow-left-light"></div></a></li>
+    <li ng-hide="mode=='edit'"><a href="" ng-click="setMode('view')"><i class="fa fa-search fa-2x"></i><div ng-show="mode=='view'" class="arrow-left-light"></div></a></li>
     <li><a href="" ng-click="setMode('edit')"><i class="fa fa-pencil-square-o fa-2x"></i><div ng-show="mode=='edit'" class="arrow-left-light"></div></a></li>
     <li ng-show="mode=='edit'" ><a href="" ng-click="savePlan()"><i class="fa fa-save fa-2x"></i></a></li>
-    <li><a href="" ng-click="setMode('run')"><i class="fa fa-check-square-o fa-2x"></i><div ng-show="mode=='run'" class="arrow-left-light"></div></a></li>
+    <li ng-hide="mode=='edit'"><a href="" ng-click="setMode('run')"><i class="fa fa-check-square-o fa-2x"></i><div ng-show="mode=='run'" class="arrow-left-light"></div></a></li>
   </ul>
 </div>
 <div class="subNavbetween"></div>
@@ -73,11 +73,21 @@
       <div class="col-sm-4">
         {{ testStep.setup }}
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         {{ testStep.action }}
       </div>
       <div class="col-sm-4">
         {{ testStep.outcome }}
+      </div>
+      <div class="col-sm-1">
+        <div class="row">
+          <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+          <a href="#"><i class="fa fa-undo fa-lg"></i></a>
+        </div>
+        <div class="row">
+          <a href="#"><i class="fa fa-thumbs-o-up fa-lg"></i></a>
+          <a href="#"><i class="fa fa-thumbs-o-down fa-lg"></i></a>
+        </div>
       </div>
     </div>
   </div>
