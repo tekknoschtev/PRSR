@@ -7,7 +7,10 @@ app.controller('TestPlanCtrl', function($scope, $http, $routeParams, $location, 
   $scope.content = 'Test';
   
   if(planId) {
-    $scope.testPlan = TestPlanFactory.getPlan();
+//    $scope.testPlan = TestPlanFactory.getPlanById(planId);
+    TestPlanFactory.getPlanById(planId).success(function(response) {
+      $scope.testPlan = response.plan;
+    });
     $scope.mode = 'view';
   }
   else if (!planId) {
@@ -16,7 +19,10 @@ app.controller('TestPlanCtrl', function($scope, $http, $routeParams, $location, 
   }
   
   if($location.$$path == '/testplans') {
-    $scope.testPlans = TestPlanFactory.getAllPlans();
+    TestPlanFactory.getAllPlans().success(function(response) {
+      console.log(response);
+      $scope.testPlans = response.testplans;
+    })
   }
   
   
@@ -35,4 +41,8 @@ app.controller('TestPlanCtrl', function($scope, $http, $routeParams, $location, 
     $location.path('testplans/plan/' + $scope.testPlan.details.extrnId);
     $scope.mode = 'view';
   };
+  
+  $scope.exportJson = function() {
+    console.log(JSON.stringify($scope.testPlan));
+  }
 });

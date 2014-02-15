@@ -29,7 +29,7 @@ var newPlan = {
 var plan = {
   "details": {
       "extrnId": "SFS-20201",
-      "softwareChange": "Fixing a bug that allowed more invoice documents than specified in the MAX_DOC_QTY_FILE when multiple document types used the generic template.  Additionally, enhancements are being made to the messaging after document submission to show users all files that were generated.",
+      "softwareChange": "Fixing a bug that allowed more invoice documents than specified in the \n\n\n MAX_DOC_QTY_FILE when multiple document types used the generic template.  Additionally, enhancements are being made to the messaging after document submission to show users all files that were generated.",
       "testStrategy": "",
       "category": [
         {
@@ -97,16 +97,15 @@ app.factory('TestPlanFactory', function($http) {
       plan = testplan;
       return plan;
     },
-    getPlan: function(planId) {
-//      return $http.get(url + planId);
-      return plan;
+    getPlanById: function(planId) {
+      return $http.get(url + planId);
     },
     getNewPlan: function() {
       return newPlan;
     },
     getAllPlans: function() {
-//      return $http.get(url);
-      return [plan, plan, plan, plan, plan];
+      return $http.get(url);
+//      return [plan, plan, plan, plan, plan];
     }
   };
 });

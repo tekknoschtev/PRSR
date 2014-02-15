@@ -2,10 +2,10 @@ var express = require('express'),
     mongoose = require('mongoose'),
     fs = require('fs');
     
-var db = mongoose.connect('mongodb://localhost/nodeAngularSeed');
+var db = mongoose.connect('mongodb://localhost/prsr');
 
 // Bootstrap models
-// require('./app/models/__files__');
+require('./server/models/testplan');
 
 var app = express();
 
