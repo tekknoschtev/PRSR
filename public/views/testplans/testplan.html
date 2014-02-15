@@ -4,28 +4,28 @@
     <li><a href="" ng-click="setMode('edit')"><i class="fa fa-pencil-square-o fa-2x"></i><div ng-show="mode=='edit'" class="arrow-left-light"></div></a></li>
     <li ng-show="mode=='edit'" ><a href="" ng-click="savePlan()"><i class="fa fa-save fa-2x"></i></a></li>
     <li ng-hide="mode=='edit'"><a href="" ng-click="setMode('run')"><i class="fa fa-check-square-o fa-2x"></i><div ng-show="mode=='run'" class="arrow-left-light"></div></a></li>
-    <li><a href="" ng-click="exportJson()"><i class="fa fa-external-link fa-2x"></i></div></a></li>
+    <li><a href="" ng-click="exportJson()"><i class="fa fa-external-link fa-2x"></i></a></li>
   </ul>
 </div>
 <div class="subNavbetween"></div>
   
   
-<div class="col-lg-11" ng-show="mode == 'view'">
+<div class="col-xs-11" ng-show="mode == 'view'">
   <div class="row header">{{ testPlan.details.extrnId }} - View</div>
     
   <div ng-repeat="category in testPlan.details.category">
     <div class="row">
-      <div class="category col-md-12">{{ category.name }}</div> 
+      <div class="category col-xs-12">{{ category.name }}</div> 
     </div>
     <div class="row testPlanInfo" ng-repeat="testStep in category.testSteps">
       <div class="col-sm-4">
-        {{ testStep.setup }}
+        <span class="only-print">Setup: </span> {{ testStep.setup }}
       </div>
       <div class="col-sm-4">
-        {{ testStep.action }}
+        <span class="only-print">Action: </span> {{ testStep.action }}
       </div>
       <div class="col-sm-4">
-        {{ testStep.outcome }}
+        <span class="only-print">Outcome: </span> {{ testStep.outcome }}
       </div>
     </div>
   </div>
